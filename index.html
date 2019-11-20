@@ -16,16 +16,16 @@
     </div>
     <ul class="list ma0 pa0 mt5 mt4-ns">
       <li class="tc tl-ns f3 f5-ns mb4 mb3-ns lh-title">
-        <a class="link near-black-80 hover-blue" href="#">A project name</a>
+        <a class="near-black-80" href="#">A project name</a>
       </li>
       <li class="tc tl-ns f3 f5-ns mb4 mb3-ns lh-title">
-        <a class="link near-black-80 hover-blue" href="#">Longer project name</a>
+        <a class="near-black-80" href="#">Longer project name</a>
       </li>
       <li class="tc tl-ns f3 f5-ns mb4 mb3-ns lh-title">
-        <a class="link near-black-80 hover-blue" href="#">Word</a>
+        <a class="near-black-80" href="#">Word</a>
       </li>
       <li class="tc tl-ns f3 f5-ns mb4 mb3-ns lh-title">
-        <a class="link near-black-80 hover-blue" href="#">Project name</a>
+        <a class="near-black-80" href="#">Project name</a>
       </li>
     </ul>
   </nav>
@@ -39,12 +39,7 @@
 
     toggle.addEventListener('click', e => {
       document.body.classList.toggle('menu-open')
-      if (document.body.classList.contains('menu-open'))
-      {
-        e.target.innerText = e.target.dataset.closeText
-      } else {
-        e.target.innerText = e.target.dataset.openText
-      }
+        e.target.innerText = document.body.classList.contains('menu-open') ? e.target.dataset.closeText : e.target.dataset.openText
     })
   </script>
 </body>
