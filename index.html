@@ -9,28 +9,39 @@
 </head>
 <body class="sans-serif near-black-80 h-100 pa4 grid">
   <nav>
-    <h1 class="ttu tracked fw9 ma0">LOGO</h1>
-    <button id="menu-toggle">Menu</button>
-    <ul class="list ma0 pa0">
-      <li class="mb2 lh-copy">
-        <a class="link near-black-80" href=#>Project name</a>
+    <div>
+      <h1 class="ttu tracked fw9 ma0"><a class="link" href="/">LOGO</a></h1>
+      <button id="menu-toggle" class="dn-ns ttu tracked fw7 f6
+      bn bg-white" data-open-text="Menu" data-close-text="Close">Menu</button>
+    </div>
+    <ul class="list ma0 pa0 mt5 mt4-ns">
+      <li class="tc tl-ns f3 f4-ns mb3 lh-copy">
+        <a class="link near-black-80 hover-blue" href=#>Project name</a>
       </li>
-      <li class="mb2 lh-copy">
-        <a class="link near-black-80" href=#>Project name</a>
+      <li class="tc tl-ns f3 f4-ns mb3 lh-copy">
+        <a class="link near-black-80 hover-blue" href=#>Project name</a>
       </li>
-      <li class="mb2 lh-copy">
-        <a class="link near-black-80" href=#>Project name</a>
+      <li class="tc tl-ns f3 f4-ns mb3 lh-copy">
+        <a class="link near-black-80 hover-blue" href=#>Project name</a>
       </li>
     </ul>
   </nav>
   <section>
-    <h1 class="f1 f-headline-l tc ma6 ttu tracked-mega fw9 lh-solid measure-narrow center">hello world!</h1>
+    <h1 class="f1 f-headline-l mv5 ttu tracked-mega fw9 lh-solid measure-narrow center">hello world!</h1>
+    <p class="measure f4 f3-ns lh-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
   </section>
   <script type="text/javascript">
     var toggle = document.getElementById('menu-toggle')
 
     toggle.addEventListener('click', e => {
       document.body.classList.toggle('menu-open')
+      if (document.body.classList.contains('menu-open'))
+      {
+        e.target.innerText = e.target.dataset.closeText
+      } else {
+        e.target.innerText = e.target.dataset.openText
+      }
     })
   </script>
 </body>
