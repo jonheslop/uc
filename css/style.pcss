@@ -1,6 +1,32 @@
 @import "tachyons";
 
+/* Media queries */
+@custom-media --small screen and (max-width: 30em);
+@custom-media --not-small screen and (min-width: 30em);
+@custom-media --large screen and (min-width: 60em);
+
 html,
 body {
   height: 100%;
+}
+
+@media (--not-small) {
+  .grid {
+    display: grid;
+    grid-template-columns: [nav] 12rem [content] 1fr;
+    grid-gap: 4rem;
+    align-items: start;
+  }
+}
+
+@media (--small) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    ul {
+      display: none;
+    }
+  }
 }
