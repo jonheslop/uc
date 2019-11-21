@@ -1,4 +1,3 @@
-@import "tachyons";
 root: {
 --sans-serif: -apple-system, BlinkMacSystemFont, -system-ui, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 --serif: 'Big caslon', sans-serif;
@@ -148,22 +147,4 @@ root: {
 --gray-700: #aeb3b5;
 --gray-800: #c8cccd;
 --gray-900: #e4e5e6;
-}
-
-@import "./modules/mediaqueries.pcss";
-@import "./modules/base-grid.pcss";
-@import "./modules/nav.pcss";
-@import "./modules/links.pcss";
-@import "./modules/content-grid.pcss";
-
-html,
-body {
-  font-size: 14px;
-  height: 100%;
-}
-
-img {
-  background-color: #ccc;
-  max-width: 100%;
-  height: auto;
 }
