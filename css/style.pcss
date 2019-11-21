@@ -1,82 +1,17 @@
 @import "tachyons";
-
-/* Media queries */
-@custom-media --small screen and (max-width: 30em);
-@custom-media --not-small screen and (min-width: 30em);
-@custom-media --large screen and (min-width: 60em);
+@import "./modules/mediaqueries.pcss";
+@import "./modules/base-grid.pcss";
+@import "./modules/nav.pcss";
+@import "./modules/links.pcss";
+@import "./modules/content-grid.pcss";
 
 html,
 body {
   height: 100%;
 }
 
-@media (--not-small) {
-  .grid {
-    display: grid;
-    grid-template-columns: [nav] 8rem [content] 1fr;
-    grid-gap: 2rem;
-    align-items: start;
-  }
-}
-
-@media (--large) {
-  .grid {
-    grid-template-columns: [nav] 12rem [content] 1fr;
-    grid-gap: 4rem;
-  }
-}
-
-@media (--small) {
-  nav {
-    margin-bottom: 4rem;
-
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-content: center;
-    }
-
-    ul {
-      display: none;
-    }
-  }
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  &:link,
-  &:visited {
-    color: #111;
-  }
-
-  &:hover {
-    text-decoration-thickness: 2px;
-  }
-
-  &:focus {
-    outline: 0;
-    background-color: #ffd700;
-    box-shadow: 0 -2px #ffd700, 0 2px #ffd700;
-    text-decoration-thickness: 2px;
-  }
-}
-
-@media (--small) {
-  .menu-open nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    padding: 2rem;
-
-     ul {
-      display: block;
-      flex-grow: 1;
-     }
-  }
+img {
+  background-color: #ccc;
+  max-width: 100%;
+  height: auto;
 }

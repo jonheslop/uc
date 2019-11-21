@@ -5,6 +5,7 @@ module.exports = {
     require('postcss-import'),
     require('postcss-nested'),
     require('postcss-easing-gradients'),
+    require('postcss-each'),
     cssnext({
       features: {
         customProperties: {

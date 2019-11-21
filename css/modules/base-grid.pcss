@@ -1,0 +1,15 @@
+@media (--not-small) {
+  .base-grid {
+    display: grid;
+    grid-template-columns: [nav] 8rem [content] 1fr;
+    grid-gap: 2rem;
+    align-items: start;
+  }
+}
+
+@media (--large) {
+  .base-grid {
+    grid-template-columns: [nav] 12rem [content] 1fr;
+    grid-gap: 4rem;
+  }
+}

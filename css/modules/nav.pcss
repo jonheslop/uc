@@ -1,0 +1,36 @@
+@media (--small) {
+  nav {
+    margin-bottom: 4rem;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (--small) {
+  .menu-open nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    padding: 2rem;
+
+     ul {
+      display: block;
+      flex-grow: 1;
+     }
+  }
+}

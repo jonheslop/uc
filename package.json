@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "css": "postcss css/style.pcss -o css/style.min.css -w",
-    "dev": "browser-sync start --server --files '*.html, css/*.css'"
+    "dev": "browser-sync start --server --files '**/*.html, css/*.css'"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -19,5 +19,8 @@
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
     "tachyons": "^4.11.1"
+  },
+  "dependencies": {
+    "postcss-each": "^0.10.0"
   }
 }

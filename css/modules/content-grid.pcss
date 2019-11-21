@@ -1,0 +1,17 @@
+@media (--not-small) {
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* Generate column classes for all permutations */
+@each $column-start in 1, 2, 3, 4, 5 {
+  @each $column-end in 1, 2, 3, 4, 5 {
+    .gc-$(column-start)-$(column-end) {
+      grid-column: $(column-start) / $(column-end)
+    }
+  }
+}
