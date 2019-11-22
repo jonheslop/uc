@@ -16,6 +16,12 @@
 
 button {
   cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    background-color: #ffd700;
+    box-shadow: 0 -2px #ffd700, 0 2px #ffd700;
+  }
 }
 
 @media (--small) {
