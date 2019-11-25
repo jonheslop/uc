@@ -1,0 +1,36 @@
+---
+pagination:
+  data: projects
+  size: 12
+permalink: projects{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+---
+
+{% extends "base.njk" %}
+{% set htmlTitle = item.title %}
+
+{% block content %}
+  <h1>Projects</h1>
+
+  {# loop through paginated item #}
+  {% for item in pagination.items %}
+    {% if loop.first %}<ul>{% endif %}
+      <li>
+        <h2><a href="/projects/{{ item.slug }}">{{ item.title }}</a></h2>
+        <p><time datetime="{{ item.date }}">{{ item.date }}</time></p>
+      </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+  {# pagination 
+  {% if pagination.hrefs | length > 0 %}
+  <ul>
+    {% if pagination.previousPageHref %}
+      <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
+    {% endif %}
+    {% if pagination.nextPageHref %}
+      <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
+    {% endif %}
+  </ul>
+  {% endif %} #}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/style.min.css" rel="stylesheet"/>
+  <title>Hello world</title>
+  <meta name="description" content="Some words about what this website is to help people find it with search engines.">
+</head>
+<body class="sans-serif near-black-80 h-100 pa4 base-grid">
+  {% include "_nav.njk" %}
+  <main class="{{grid}}-grid mb5" role="main">
+      {% block content %}
+      {% endblock %}
+  </main>
+  <script type="text/javascript">
+    var toggle = document.getElementById('menu-toggle')
+
+    toggle.addEventListener('click', e => {
+      document.body.classList.toggle('menu-open')
+        e.target.innerText = document.body.classList.contains('menu-open') ? e.target.dataset.closeText : e.target.dataset.openText
+    })
+  </script>
+</body>
+</html>

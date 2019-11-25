@@ -1,0 +1,40 @@
+---
+grid: content
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: projects/{{ project.slug }}/index.html
+---
+{% extends "base.njk" %}
+{% set htmlTitle = project.title %}
+
+{% macro image(image, grid) %}
+  <figure class="ma0 mb4 {{ grid }}">
+    <img src="{{ image.url }}" alt="{{ image.alt }}"/>
+    {% if image.title %}
+      <figcaption>
+        <p class="f6 ma0 lh-copy">{{ image.title }}</p>
+      </figcaption>
+    {% endif %}
+  </figure>
+{% endmacro %}
+
+{% block content %}
+    {% for block in project.blocks %}
+      {{ image(block.image[0], 'gc-3-5') }}
+
+      <article class="gc-1-5">
+        <h1 class="f4 f2-l fw9 ma0 mb2 lh-title">{{ project.title }}</h1>
+        <div class="measure ma0 mb4 f5 f3-l lh-copy nested-copy-seperator">
+          {{ project.description | safe }}
+        </div>
+      </article>
+
+      {{ image(block.image[1], 'gc-1-3') }}
+      {{ image(block.image[2], 'gc-4-5') }}
+    {% endfor %}
+
+    <code class="pre gc-1-5 f6">{{ project | dump(2) }}</code>
+
+{% endblock %}

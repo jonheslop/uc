@@ -6,8 +6,9 @@
   "author": "Jon Heslop <jon@jonheslop.com>",
   "license": "MIT",
   "scripts": {
+    "build": "eleventy",
     "css": "postcss css/style.pcss -o css/style.min.css -w",
-    "dev": "browser-sync start --server --files '**/*.html, css/*.css'"
+    "dev": "eleventy --serve"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -21,6 +22,9 @@
     "tachyons": "^4.11.1"
   },
   "dependencies": {
+    "@11ty/eleventy": "^0.9.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
     "postcss-each": "^0.10.0"
   }
 }

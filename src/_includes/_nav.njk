@@ -1,0 +1,14 @@
+<nav>
+  <div>
+    <h1 class="ttu tracked fw9 ma0"><a class="no-underline" href="/">LOGO</a></h1>
+    <button id="menu-toggle" class="dn-ns ttu tracked fw7 f6
+    bn bg-white" data-open-text="Menu" data-close-text="Close">Menu</button>
+  </div>
+  <ul class="list ma0 pa0 mt5 mt4-ns">
+    {% for project in projects %}
+      <li class="tc tl-ns f3 f5-ns mb4 mb3-ns lh-title">
+        <a class="near-black-80" href="/projects/{{ project.slug }}">{{ project.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
