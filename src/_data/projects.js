@@ -31,6 +31,14 @@ async function getAllProjects() {
               slug
               title
               description(markdown: true)
+              headlineImage {
+                  url
+                  format
+                  alt
+                  height
+                  title
+                  width
+                }
               seo {
                 description
                 image {
@@ -92,6 +100,7 @@ async function getAllProjects() {
       title: project.title,
       slug: project.slug,
       description: project.description,
+      headlineImage: project.headlineImage,
       blocks: project.blocks,
       seo: project.seo
     };
