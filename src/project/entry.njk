@@ -32,10 +32,17 @@ permalink: projects/{{ project.slug }}/index.html
     </article>
 
     {% for block in project.blocks %}
-      {{ image(block.image[0], 'gc-3-5') }}
-      {{ image(block.image[1], 'gc-1-3') }}
-      {{ image(block.image[2], 'gc-4-5') }}
+      {% if block.layout == 'triple A' %}
+        {{ image(block.image[0], 'gc-3-5') }}
+        {{ image(block.image[1], 'gc-1-3') }}
+        {{ image(block.image[2], 'gc-4-5') }}
+      {% endif %}
+      {% if block.layout == 'triple B' %}
+        {{ image(block.image[0], 'gc-3-5') }}
+        {{ image(block.image[1], 'gc-1-3') }}
+        {{ image(block.image[2], 'gc-3-5') }}
+      {% endif %}
     {% endfor %}
-    <!-- <code class="pre gc-1-5 f6">{{ project | dump(2) }}</code> -->
+    {# <code class="pre gc-1-5 f6">{{ project | dump(2) }}</code> #}
   </div>
 {% endblock %}
